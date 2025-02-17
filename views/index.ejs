@@ -4,22 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Currency Converter</h1>
-        <div class="converter">
+        <div class="converter-box">
             <div class="input-group">
-                <input type="number" id="amount" placeholder="Enter the Amount" value="1">
+                <input type="number" id="amount" placeholder="Amount">
                 <select id="fromCurrency"></select>
             </div>
-            <button id="swap">⇄</button>
+            
+            <div class="swap-button">
+                <button id="swap">⇄</button>
+            </div>
+
             <div class="input-group">
                 <input type="number" id="result" readonly>
                 <select id="toCurrency"></select>
             </div>
-            <button id="convert">Convert</button>
+
+            <button id="convert" class="convert-button">Convert</button>
         </div>
     </div>
     <script src="/script.js"></script>
