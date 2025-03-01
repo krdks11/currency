@@ -5,28 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
     <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Currency Converter</h1>
-        <div class="converter-box">
-            <div class="input-group">
-                <input type="number" id="amount" placeholder="Amount">
-                <select id="fromCurrency"></select>
-            </div>
-            
-            <div class="swap-button">
-                <button id="swap">⇄</button>
-            </div>
+        <div class="converter-card">
+            <h1>Currency Converter</h1>
+            <div class="converter-box">
+                <div class="input-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" placeholder="Enter amount">
+                    <select id="fromCurrency" class="currency-select"></select>
+                </div>
+                
+                <button id="swap" class="swap-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4"/>
+                    </svg>
+                </button>
 
-            <div class="input-group">
-                <input type="number" id="result" readonly>
-                <select id="toCurrency"></select>
-            </div>
+                <div class="input-group">
+                    <label for="result">Converted Amount</label>
+                    <input type="number" id="result" readonly>
+                    <select id="toCurrency" class="currency-select"></select>
+                </div>
 
-            <button id="convert" class="convert-button">Convert</button>
+                <button id="convert" class="convert-button">Convert</button>
+            </div>
         </div>
     </div>
     <script src="/script.js"></script>
 </body>
-</html> 
+</html>

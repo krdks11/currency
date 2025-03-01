@@ -2,183 +2,126 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, #2c3e50, #3498db, #2980b9);
-    background-size: 200% 200%;
-    animation: gradientBG 15s ease infinite;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 20px;
-}
-
-/* Add this new animation keyframes */
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 .container {
     width: 100%;
-    max-width: 600px;
+    max-width: 450px;
+}
+
+.converter-card {
     background: white;
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
+    color: #2d3748;
     text-align: center;
-    color: #333;
-    margin-bottom: 2.5rem;
-    font-size: 2.2rem;
+    margin-bottom: 30px;
+    font-size: 28px;
 }
 
 .converter-box {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 20px;
 }
 
 .input-group {
     display: flex;
-    gap: 1.5rem;
-    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    color: #4a5568;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 input, select {
-    padding: 1rem 1.2rem;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    outline: none;
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 16px;
     transition: border-color 0.3s ease;
 }
 
 input:focus, select:focus {
-    border-color: #2196f3;
+    outline: none;
+    border-color: #667eea;
 }
 
-input {
-    flex: 2;
-}
-
-select {
-    flex: 1;
-    cursor: pointer;
+.currency-select {
+    margin-top: 8px;
+    background-color: #f7fafc;
 }
 
 .swap-button {
-    display: flex;
-    justify-content: center;
-    margin: 0.5rem 0;
-}
-
-#swap {
-    background: #2196f3;
-    color: white;
+    align-self: center;
+    background: #f7fafc;
     border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
+    padding: 10px;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 1.4rem;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-#swap:hover {
-    background: #1976d2;
-    transform: scale(1.05);
+.swap-button:hover {
+    background: #e2e8f0;
+    transform: scale(1.1);
 }
 
 .convert-button {
-    width: 100%;
-    padding: 1.2rem;
-    background: #4caf50;
+    background: #667eea;
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 .convert-button:hover {
-    background: #388e3c;
-    transform: scale(1.02);
+    background: #5a67d8;
 }
 
-/* Large screens */
-@media (min-width: 1200px) {
-    .container {
-        max-width: 700px;
-        padding: 4rem;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    input, select {
-        font-size: 1.2rem;
-    }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-/* Medium screens */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-        padding: 2rem;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .input-group {
-        gap: 1rem;
-    }
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
-/* Small screens */
 @media (max-width: 480px) {
-    .container {
-        width: 95%;
-        padding: 1.5rem;
+    .converter-card {
+        padding: 20px;
     }
 
     h1 {
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
+        font-size: 24px;
     }
 
-    .input-group {
-        flex-direction: column;
-        gap: 0.8rem;
+    input, select, .convert-button {
+        padding: 10px;
     }
-
-    input, select {
-        width: 100%;
-        padding: 0.9rem;
-        font-size: 1rem;
-    }
-
-    .convert-button {
-        padding: 1rem;
-        font-size: 1.1rem;
-    }
-} 
+}
